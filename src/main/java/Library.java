@@ -5,4 +5,8 @@ public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
+    
+    public String getLibraryName() {
+    	return "TestLib";
+    }
 }
