@@ -23,27 +23,25 @@ public class Sort {
 		return array;
 	}
 	// Selection sort goes backwards through the array, finding the highest value and moving them to the end in order.
-	public int[] selection(int[] array) {
-		// Go through the array once, from last place to first
-		for (int i = array.length - 1; i > 0; i--) {
-			// The highest number in the starting is always the first.
-			int highest = array[0];
-			int index = 0;
-			// Cycle through all the unsorted numbers, to find the highest
-			for (int j = 0; j < i; j++) {
-				// Is this number higher than the largest number so far?
-				if (array[j] > highest) {
-					// Then replace the current record with this number.
-					highest = array[j];
-					// ...and store which index it's in for later.
-					index = j;
-				}
-			}
-			// After the highest unsorted number has been found, switch the highest number with the last unsorted number.
-			int temp = array[i - 1] = highest;
-			array[index] = temp;
-		}
-		return array;
+	public int[] selection(int[] arr) {
+		int n = arr.length;
+		 
+        // One by one move boundary of unsorted subarray
+        for (int i = 0; i < n-1; i++)
+        {
+            // Find the minimum element in unsorted array
+            int min_idx = i;
+            for (int j = i+1; j < n; j++)
+                if (arr[j] < arr[min_idx])
+                    min_idx = j;
+ 
+            // Swap the found minimum element with the first
+            // element
+            int temp = arr[min_idx];
+            arr[min_idx] = arr[i];
+            arr[i] = temp;
+        }
+		return arr;
 	}
 	// Insertion sort, for each item it will find where in the already-sorted items it should be placed do so.
 	public int[] insertion(int[] array) {
