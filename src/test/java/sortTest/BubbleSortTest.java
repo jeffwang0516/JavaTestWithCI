@@ -24,7 +24,7 @@ public class BubbleSortTest {
 	public void test() {
 		Sort sort = new Sort();
 		int[] arr = {13, 7, 6, 45, 21, 9, 101, 102}; 
-		int[] expectedSortedArray = {6, 7, 9, 13, 21, 45, 101, 102};
+		int[] expectedSortedArray = {6, 7, 9, 13, 21, 45, 101, 102, 2};
 		
 		int[] sorted = sort.bubble(arr);
          
