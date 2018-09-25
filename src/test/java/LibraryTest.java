@@ -9,4 +9,10 @@ public class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }
+    
+    @Test public void testLibraryName() {
+    	
+    	Library classUnderTest = new Library();
+        assertTrue("Library Name should be \"TestLib\"", classUnderTest.getLibraryName() == "TestLib");
+    }
 }
